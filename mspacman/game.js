@@ -3,11 +3,14 @@ function init(){
 	ctx = canvas.getContext('2d');
 
 	  var img = new Image();
-	  img.src = 'pacman10-hp-sprite.png';
+
+	  img.onload = function(){
 		//draw board
-		ctx.drawImage(pacman10-hp-sprite.png, 322, 2, 463, 136);
+		ctx.drawImage(img, 322, 2, 463, 136);
 
 		//draw ms pac man
-		ctx.drawImage(pacman10-hp-sprite.png, 82, 22, 18, 18);
+		ctx.drawImage(img, 82, 22, 18, 18);
+	};
+	  img.src = 'pacman10-hp-sprite.png';
 
-};
+}
