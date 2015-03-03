@@ -6,10 +6,10 @@ function init(){
 
 	  img.onload = function(){
 		//draw board
-		ctx.drawImage(img, 322, 2, 463, 136);
+		ctx.drawImage(img, 322, 2, 463, 136, 0, 0, 463, 136);
 
 		//draw ms pac man
-		ctx.drawImage(img, 82, 22, 18, 18);
+		ctx.drawImage(img, 82, 22, 18, 18, 38, 20, 18, 18);
 	};
 	  img.src = 'pacman10-hp-sprite.png';
 
