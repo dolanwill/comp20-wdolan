@@ -1,6 +1,6 @@
-function parse {
+function parse{
 	request = new XMLHTTPRequest();
-	request.open("GET", "messages.json", true);
+	request.open("GET", "data.json", true);
 	request.onreadystatechange=parseData;
 	request.send();
 }
