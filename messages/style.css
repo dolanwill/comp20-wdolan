@@ -1,9 +1,10 @@
 p{
 	font-family: Garamond;
-	font-size: 60px;
+	font-size: 20px;
 	background-color: Blue;
 	color: #ffffff;
 	border-radius: 1em;
+	border-bottom: dashed;
 	text-align: center;
 	width: 75%;
 	margin-left: auto;
