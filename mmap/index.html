@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+		<head>
+			<title>Will Dolan Marauder Map</title>
+			<meta name="viewport" content="initial-scale=1.0", user-scalable="no" />
+			<link rel="stylesheet" href="mmap.css" />
+			
+			<script type="text/javascript" 
+			src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=places">
+			</script>
+
+			<script type="text/javascript">
+
+				function initialize() {
+
+					var myOptions = {
+							zoom: 12, 
+							center: { lat: 40.7127837, long: -74.00594130000002 },
+							mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+					var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+				}
+				google.maps.event.addDomListener(window, 'load', initialize);
+
+			</script>
+
+
+
+</html>
