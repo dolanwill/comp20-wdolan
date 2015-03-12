@@ -29,6 +29,9 @@
 			function initialize() {
 				
 				getMyLocation();
+        myLoc = google.maps.LatLng(myLat, myLng);
+        renderMap();
+
         		map = new google.maps.Map(document.getElementById('map-canvas'),
           			  	mapOptions);
         		
@@ -47,7 +50,6 @@
 						myLng = position.coords.longitude;
 						console.log(myLat);
 						console.log(myLng);
-						renderMap();
 					});
 				}
     			else{
@@ -58,17 +60,17 @@
 
 
     		function renderMap(){
-    			console.log("in rendermap");
+    		console.log("in rendermap");
 
 				console.log(myLat);
 				console.log(myLng);
 
-				myLoc = google.maps.LatLng(myLat, myLng);
 
         marker = new google.maps.Marker({
           position: myLoc,
           title: "Will's Location"
         });
+        marker.setMap(map);
 
 
     			console.log("leaving rendermap");
