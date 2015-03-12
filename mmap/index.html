@@ -30,7 +30,6 @@
 				
 				getMyLocation();
         myLoc = google.maps.LatLng(myLat, myLng);
-        renderMap();
 
         		map = new google.maps.Map(document.getElementById('map-canvas'),
           			  	mapOptions);
@@ -50,6 +49,8 @@
 						myLng = position.coords.longitude;
 						console.log(myLat);
 						console.log(myLng);
+            renderMap();
+
 					});
 				}
     			else{
