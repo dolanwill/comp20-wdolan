@@ -40,9 +40,9 @@
 						console.log("in subfunction");
 						myLat = position.coords.latitude;
 						myLng = position.coords.longitude;
-						renderMap();
 						console.log(myLat);
 						console.log(myLng);
+						renderMap();
 					});
 				}
     			else{
@@ -56,9 +56,10 @@
 
 				console.log(myLat);
 				console.log(myLng);
-    			console.log("leaving rendermap");
 
-				//myLoc = google.maps.LatLng(myLat, myLng);
+				myLoc = google.maps.LatLng(myLat, myLng);
+				console.log("myLoc");
+				console.log("leaving rendermap");
 
     			//map.panTo(myLoc);
     		}
