@@ -43,7 +43,6 @@
 						renderMap();
 						console.log(myLat);
 						console.log(myLng);
-						renderMap();
 					});
 				}
     			else{
@@ -57,9 +56,11 @@
 
 				console.log(myLat);
 				console.log(myLng);
-				myLoc = google.maps.LatLng(myLat, myLng);
+    			console.log("leaving rendermap");
 
-    			map.panTo(myLoc);
+				//myLoc = google.maps.LatLng(myLat, myLng);
+
+    			//map.panTo(myLoc);
     		}
       google.maps.event.addDomListener(window, 'load', initialize);
 
