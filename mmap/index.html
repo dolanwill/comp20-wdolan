@@ -66,12 +66,18 @@
 				console.log(myLat);
 				console.log(myLng);
 
-
+        myLoc = google.maps.LatLng(myLat, myLng);
         marker = new google.maps.Marker({
           position: myLoc,
           title: "Will's Location"
         });
+
         marker.setMap(map);
+        google.maps.event.addListener(marker, 'click', function() {
+               infowindow.setContent(marker.title);
+               infowindow.open(map, marker);
+        });
+        console.log(marker addition);
 
 
     			console.log("leaving rendermap");
