@@ -12,14 +12,19 @@
 
     <script type="text/javascript">
 
-    		var myLat = 0;
+    	var myLat = 0;
 			var myLng = 0;
 			var request = new XMLHttpRequest();
 			var myLoc = new google.maps.LatLng(myLat, myLng);
 			var mapOptions = {
           			center: { lat: myLat, lng: myLng },
-          			zoom: 15
+          			zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
         			};
+      var map;
+      var marker;
+      var infowindow = new google.maps.InfoWindow();
+      var places;
 
 			function initialize() {
 				
@@ -46,8 +51,8 @@
 					});
 				}
     			else{
-    				console.log("fuck this shit")
-;    				alert("Geolocation is not supported by your browser.");
+    				console.log("fuck this shit");
+    				alert("Geolocation is not supported by your browser.");
     			}
     		}
 
@@ -58,6 +63,7 @@
 				console.log(myLng);
 
 				myLoc = google.maps.LatLng(myLat, myLng);
+        console.log("about to pan");
     			map.panTo(myLoc);
     			console.log("leaving rendermap");
     		}
