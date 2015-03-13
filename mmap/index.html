@@ -125,11 +125,12 @@
                 title: name+"'s' Location"
             });
 
-            var contentString = name + "latitude: " + person['lat'] +" longitude: " + person['lng'];
-
-            infowindow = new google.maps.InfoWindow({ content: contentString });
+            var contentString = name + " latitude: " + person['lat'] +" longitude: " + person['lng'];
 
             google.maps.event.addListener(marker1, 'click', function() {
+                    if (infowindow) {
+                        infowindow.close();
+                    }
                    infowindow = new google.maps.InfoWindow({ content: contentString });
                    infowindow.open(map, marker1);
 
