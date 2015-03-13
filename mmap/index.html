@@ -22,8 +22,6 @@
                 mapTypeId: google.maps.MapTypeId.ROADMAP
         			};
       var map;
-      map = new google.maps.Map(document.getElementById('map-canvas'),
-                    mapOptions);
       var marker;
       var infowindow = new google.maps.InfoWindow();
       var places;
@@ -31,6 +29,7 @@
 			function initialize() {
 				
 				getMyLocation();
+        myLoc = google.maps.LatLng(myLat, myLng);
 
     		};
 
@@ -58,6 +57,8 @@
 
     		function renderMap(){
     		console.log("in rendermap");
+        map = new google.maps.Map(document.getElementById('map-canvas'),
+                    mapOptions);
 
 				console.log(myLat);
 				console.log(myLng);
