@@ -13,8 +13,8 @@
 
     <script type="text/javascript">
 
-    	var myLat = 42.4059688;
-			var myLng = -71.1184134;
+    	var myLat = 0;
+			var myLng = 0;
 			var myLoc = new google.maps.LatLng(myLat, myLng);
       var mapOptions = {
                 center: { lat: 42.4059688, lng: -71.1184134 },
@@ -125,7 +125,7 @@
                 title: name+"'s' Location"
             });
 
-            //haversine formula:
+           /* //haversine formula:
             var R = 6371000; // metres
             var a1 = myLat.toRadians();
             var a2 = myLng.toRadians();
@@ -139,7 +139,8 @@
 
             var d = R * c;
             d=d*0.000621371;
-            //end haversine formula
+            //end haversine formula*/
+            d=1;
 
             var contentString = name + " latitude: " + person['lat'] +" longitude: " + person['lng'] + " distance from me: " + d;
 
