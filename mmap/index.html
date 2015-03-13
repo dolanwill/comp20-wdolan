@@ -9,12 +9,12 @@
     <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=places">
     </script>
+  
 
     <script type="text/javascript">
 
     	var myLat = 42.4059688;
 			var myLng = -71.1184134;
-			var request = new XMLHttpRequest();
 			var myLoc = new google.maps.LatLng(myLat, myLng);
       var mapOptions = {
                 center: { lat: 42.4059688, lng: -71.1184134 },
@@ -79,11 +79,32 @@
                    infowindow.setContent(marker.title);
                    infowindow.open(map, marker);
             });
-            console.log("marker addition5");
 
+        		console.log("leaving rendermap");
+            xhr();
 
-        			console.log("leaving rendermap");
     		}
+
+      function xhr{
+            console.log("in xhr function")
+            var request = new XMLHttpRequest();
+            var url = "https://secret-about-box.herokuapp.com/sendLocation";
+            request.open("POST", url, true);
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            request.onreadystatechange = parse();
+            request.send("login=MarkHarris&lat="+myLat+"&lng="+myLng);
+
+      }
+
+      function parse{
+              console.log("In my callback function " + request.readyState);
+              if (request.readyState == 4 && request.status == 200) {
+                    converted=JSON.parse(request.responseText);
+                    for(i = 0; i < converted.length; i++){
+                        console.log(converted[i]['login']);
+                    }
+              }
+      }
 
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
