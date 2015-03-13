@@ -115,6 +115,9 @@
 
             var personCoords = new google.maps.LatLng(person['lat'], person['lng']);
             var name = person['login'];
+            if(name == 'MarkHarris'){
+              break;
+            }
 
             var marker1 = new google.maps.Marker({
                 position: personCoords,
