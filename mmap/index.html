@@ -125,7 +125,8 @@
                 title: name+"'s' Location"
             });
 
-            var contentString = name + person['lat'] + person['lng'];
+            var contentString = name + "\n latitude: " + person['lat'] +
+                                       "\n longitude: " + person['lng'];
 
             var infowindow = new google.maps.InfoWindow({ content: contentString });
 
