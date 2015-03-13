@@ -104,7 +104,7 @@
                   if (request.readyState == 4 && request.status == 200) {
                       converted=JSON.parse(request.responseText);
                        for(i = 0; i < converted.length; i++){
-                            window.setTimeout(createMarker(converted[i]), i*200);
+                            window.setTimeout(createMarker(converted[i]), i*800);
                        }
                   }
             };
