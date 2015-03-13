@@ -104,7 +104,7 @@
                   if (request.readyState == 4 && request.status == 200) {
                       converted=JSON.parse(request.responseText);
                        for(i = 0; i < converted.length; i++){
-                            createMarker(converted[i]);
+                            window.setTimeout(createMarker(converted[i]), 200);
                        }
                   }
             };
@@ -112,7 +112,6 @@
       }
 
       function createMarker(person){
-            window.setTimeout(200);
             var personCoords = new google.maps.LatLng(person['lat'], person['lng']);
             var name = person['login'];
             if(name == 'MarkHarris'){
