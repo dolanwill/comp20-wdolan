@@ -23,7 +23,7 @@
               };
       var map;
       var marker;
-      var infowindow = new google.maps.InfoWindow();
+      var infowindow = null;
       var request = new XMLHttpRequest();
 
 			function initialize() {
@@ -125,13 +125,16 @@
                 title: name+"'s' Location"
             });
 
-            var contentString = name + "\ latitude: " + person['lat'] +
-                                       "\ longitude: " + person['lng'];
+            var contentString = name + "
+             latitude: " + person['lat'] + "
+             longitude: " + person['lng'];
 
-            var infowindow = new google.maps.InfoWindow({ content: contentString });
+            infowindow = new google.maps.InfoWindow({ content: contentString });
 
             google.maps.event.addListener(marker1, 'click', function() {
+                   infowindow = new google.maps.InfoWindow({ content: contentString });
                    infowindow.open(map, marker1);
+
             });
 
       
