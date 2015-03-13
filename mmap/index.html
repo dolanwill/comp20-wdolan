@@ -94,7 +94,7 @@
             request.open("POST", url, true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.send("login=MarkHarris&lat="+myLat+"&lng="+myLng);
-            request.onreadystatechange = function{
+            request.onreadystatechange = function(){
               console.log("In my callback function " + request.readyState);
               if (request.readyState == 4 && request.status == 200) {
                   console.log("request status is tight bitch!");
@@ -102,8 +102,8 @@
                     for(i = 0; i < converted.length; i++){
                         console.log(converted[i]['login']);
                     }
-              };
-            }
+              }
+            };
 
       }
 
