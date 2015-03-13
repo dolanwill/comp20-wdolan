@@ -21,7 +21,8 @@
           			zoom: 15,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
         			};
-      var map = new google.maps.Map(document.getElementById('map-canvas'),
+      var map;
+      map = new google.maps.Map(document.getElementById('map-canvas'),
                     mapOptions);
       var marker;
       var infowindow = new google.maps.InfoWindow();
@@ -30,7 +31,7 @@
 			function initialize() {
 				
 				getMyLocation();
-        
+
     		};
 
     		function getMyLocation() {
