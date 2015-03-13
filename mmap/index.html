@@ -128,11 +128,11 @@
             //haversine formula (from stackoverflow):
             var R = 6371; // km 
             var x1 = person['lat']-myLat;
-            var dLat = x1.toRad();  
+            var dLat = toRad(x1);  
             var x2 = person['lng']-myLon;
-            var dLon = x2.toRad();  
+            var dLon = toRad(x2); 
             var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
-                            Math.cos(myLat.toRad()) * Math.cos(person['lat'].toRad()) * 
+                            toRad(Math.cos(myLat)) * toRad(Math.cos(person['lat'])) * 
                             Math.sin(dLon/2) * Math.sin(dLon/2);  
             var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
             var d = R * c * 0.621371;
@@ -151,6 +151,9 @@
             });
 
       
+      }
+      function toRad(x) {
+            return x * Math.PI / 180;
       }
 
 
