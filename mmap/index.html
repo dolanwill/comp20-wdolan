@@ -85,7 +85,8 @@
 
     		}
 
-      function getData{
+
+      function getData(){
             console.log("in xhr function");
             var request = new XMLHttpRequest();
             var url = "https://secret-about-box.herokuapp.com/sendLocation";
@@ -96,7 +97,7 @@
 
       }
 
-      function parse{
+      function parse(){
               console.log("In my callback function " + request.readyState);
               if (request.readyState == 4 && request.status == 200) {
                     converted=JSON.parse(request.responseText);
