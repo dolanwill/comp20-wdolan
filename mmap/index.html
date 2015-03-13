@@ -125,24 +125,21 @@
                 title: name+"'s' Location"
             });
 
-           /* //haversine formula:
-            var R = 6371000; // metres
-            var a1 = myLat.toRadians();
-            var a2 = myLng.toRadians();
-            var Δa = (person['lng']-myLat).toRadians();
-            var Δb = (person['lng']-myLng).toRadians();
+            //haversine formula (from stackoverflow):
+            var R = 6371; // km 
+            var x1 = person['lat']-myLat;
+            var dLat = x1.toRad();  
+            var x2 = person['lng']-myLon;
+            var dLon = x2.toRad();  
+            var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
+                            Math.cos(myLat.toRad()) * Math.cos(person['lat'].toRad()) * 
+                            Math.sin(dLon/2) * Math.sin(dLon/2);  
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+            var d = R * c * 0.621371;
+            //end haversine, converted to miles
 
-            var a = Math.sin(Δa/2) * Math.sin(Δa/2) +
-                    Math.cos(a1) * Math.cos(a2) *
-                    Math.sin(Δb/2) * Math.sin(Δb/2);
-            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
-            var d = R * c;
-            d=d*0.000621371;
-            //end haversine formula*/
-            d=1;
-
-            var contentString = name + " latitude: " + person['lat'] +" longitude: " + person['lng'] + " distance from me: " + d;
+            var contentString = name + " latitude: " + person['lat'] +" longitude: " + person['lng'] + " distance from me: " + d " miles";
 
             google.maps.event.addListener(marker1, 'click', function() {
                     if (infowindow) {
