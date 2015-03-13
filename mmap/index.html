@@ -130,7 +130,7 @@
             var a1 = toRad(myLat);
             var a2 = toRad(person['lat']);
             var da = toRad((person['lat']-myLat));
-            var dy = toRad((lon2-myLng));
+            var dy = toRad((person['lng']-myLng));
 
             var a = Math.sin(da/2) * Math.sin(da/2) +
                     Math.cos(a1) * Math.cos(a2) *
