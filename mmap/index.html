@@ -101,6 +101,7 @@
       function parse(){
               console.log("In my callback function " + request.readyState);
               if (request.readyState == 4 && request.status == 200) {
+                  console.log("request status is tight bitch!");
                     converted=JSON.parse(request.responseText);
                     for(i = 0; i < converted.length; i++){
                         console.log(converted[i]['login']);
