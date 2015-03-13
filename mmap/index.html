@@ -25,8 +25,6 @@
       var marker;
       var infowindow = new google.maps.InfoWindow();
       var request = new XMLHttpRequest();
-      request.onreadystatechange = parse();
-
 
 			function initialize() {
 				
@@ -107,20 +105,8 @@
 
       }
 
-      function parse(){
-              console.log("In my callback function " + request.readyState);
-              if (request.readyState == 4 && request.status == 200) {
-                  console.log("request status is tight bitch!");
-                    converted=JSON.parse(request.responseText);
-                    for(i = 0; i < converted.length; i++){
-                        console.log(converted[i]['login']);
-                    }
-              }
-      }
 
       google.maps.event.addDomListener(window, 'load', initialize);
-      request.onreadystatechange = parse();
-
 
 
     </script>
