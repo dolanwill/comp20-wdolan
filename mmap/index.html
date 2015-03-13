@@ -12,8 +12,8 @@
 
     <script type="text/javascript">
 
-    	var myLat = 0;
-			var myLng = 0;
+    	var myLat = 42.4059688;
+			var myLng = -71.1184134;
 			var request = new XMLHttpRequest();
 			var me = new google.maps.LatLng(myLat, myLng);
       var map;
@@ -28,6 +28,7 @@
                 zoom: 15,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
               };
+        console.log("abotu to draw map");
         map = new google.maps.Map(document.getElementById('map-canvas'),
                     mapOptions);
         getMyLocation();
@@ -63,6 +64,7 @@
 
 				console.log(myLat);
 				console.log(myLng);
+
 
         marker = new google.maps.Marker({
           position: me,
