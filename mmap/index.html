@@ -125,8 +125,11 @@
                 title: name+"'s' Location"
             });
 
+            var contentString = name + person['lat'] } person['lng'];
+
+            var infowindow = new google.maps.InfoWindow({ content: contentString });
+
             google.maps.event.addListener(marker1, 'click', function() {
-                   infowindow.setContent(marker1.title, person['lat'], person['lng']);
                    infowindow.open(map, marker1);
             });
 
