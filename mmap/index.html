@@ -94,11 +94,20 @@
             request.open("POST", url, true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.send("login=MarkHarris&lat="+myLat+"&lng="+myLng);
-            request.onreadystatechange = parse();
+            request.onreadystatechange = function{
+              console.log("In my callback function " + request.readyState);
+              if (request.readyState == 4 && request.status == 200) {
+                  console.log("request status is tight bitch!");
+                    converted=JSON.parse(request.responseText);
+                    for(i = 0; i < converted.length; i++){
+                        console.log(converted[i]['login']);
+                    }
+              };
+            }
 
       }
 
-      function parse(){
+      /*function parse(){
               console.log("In my callback function " + request.readyState);
               if (request.readyState == 4 && request.status == 200) {
                   console.log("request status is tight bitch!");
@@ -107,7 +116,7 @@
                         console.log(converted[i]['login']);
                     }
               }
-      }
+      }*/
 
       google.maps.event.addDomListener(window, 'load', initialize);
       request.onreadystatechange = parse();
