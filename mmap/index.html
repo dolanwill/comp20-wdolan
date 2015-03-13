@@ -71,7 +71,7 @@
               position: myLoc,
               map: map,
               animation: google.maps.Animation.DROP,
-              title: "Will's Location"
+              title: "Here I am!"
             });
 
             
@@ -102,13 +102,28 @@
                        for(i = 0; i < converted.length; i++){
                            createMarker(converted[i]);
                        }
-              }
+                  }
             };
 
       }
 
       function createMarker(person){
             console.log("person 1: " +person['login']);
+            var personCoords = new google.maps.LatLng(person['lat'], person['lng']);
+            var name = person['login'];
+
+            var marker1 = new google.maps.Marker({
+                position: personCoords,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                title: name+"'s' Location"
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                   infowindow.setContent(marker1.title);
+                   infowindow.open(map, marker1);
+            });
+
       }
 
 
