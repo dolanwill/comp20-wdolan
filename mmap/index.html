@@ -29,7 +29,6 @@
 			function initialize() {
 				
 				getMyLocation();
-        myLoc = google.maps.LatLng(myLat, myLng);
 
     		};
 
@@ -44,6 +43,7 @@
 						myLng = position.coords.longitude;
 						console.log(myLat);
 						console.log(myLng);
+            myLoc = google.maps.LatLng(myLat, myLng);
             renderMap();
 
 					});
