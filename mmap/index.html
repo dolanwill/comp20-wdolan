@@ -31,6 +31,12 @@
         console.log("abotu to draw map");
         map = new google.maps.Map(document.getElementById('map-canvas'),
                     mapOptions);
+        var tuftsLatlng = new google.maps.LatLng(42.4069,71.1198);
+             var marker = new google.maps.Marker({
+               position: tuftsLatlng,
+               map: map,
+            title: 'Hello World!'
+           });
         getMyLocation();
 
     	};
@@ -40,48 +46,48 @@
 
     			if (navigator.geolocation) { 
 
-					navigator.geolocation.getCurrentPosition(function(position) {
-						console.log("in subfunction");
-						myLat = position.coords.latitude;
-						myLng = position.coords.longitude;
-						console.log(myLat);
-						console.log(myLng);
-            me = google.maps.LatLng(myLat, myLng);
-            renderMap();
+    					navigator.geolocation.getCurrentPosition(function(position) {
+    						console.log("in subfunction");
+    						myLat = position.coords.latitude;
+    						myLng = position.coords.longitude;
+    						console.log(myLat);
+    						console.log(myLng);
+                me = google.maps.LatLng(myLat, myLng);
+                renderMap();
 
-					});
-				}
+    					   });
+				  }
     			else{
-    				console.log("fuck this shit");
-    				alert("Geolocation is not supported by your browser.");
+        				console.log("fuck this shit");
+        				alert("Geolocation is not supported by your browser.");
     			}
     	}
 
 
     		function renderMap(){
-    		console.log("in rendermap");
+    		    console.log("in rendermap");
         
 
-				console.log(myLat);
-				console.log(myLng);
+				    console.log(myLat);
+    				console.log(myLng);
 
 
-        marker = new google.maps.Marker({
-          position: me,
-          map: map,
-          animation: google.maps.Animation.DROP,
-          title: "Will's Location"
-        });
+            marker = new google.maps.Marker({
+              position: me,
+              map: map,
+              animation: google.maps.Animation.DROP,
+              title: "Will's Location"
+            });
 
-        
-        google.maps.event.addListener(marker, 'click', function() {
-               infowindow.setContent(marker.title);
-               infowindow.open(map, marker);
-        });
-        console.log("marker addition4");
+            
+            google.maps.event.addListener(marker, 'click', function() {
+                   infowindow.setContent(marker.title);
+                   infowindow.open(map, marker);
+            });
+            console.log("marker addition4");
 
 
-    			console.log("leaving rendermap");
+        			console.log("leaving rendermap");
     		}
 
       google.maps.event.addDomListener(window, 'load', initialize);
