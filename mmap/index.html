@@ -67,15 +67,16 @@
         marker = new google.maps.Marker({
           position: myLoc,
           map: map,
+          animation: google.maps.Animation.DROP,
           title: "Will's Location"
         });
 
-        marker.setMap(map);
+        
         google.maps.event.addListener(marker, 'click', function() {
                infowindow.setContent(marker.title);
                infowindow.open(map, marker);
         });
-        console.log("marker addition");
+        console.log("marker addition2");
 
 
     			console.log("leaving rendermap");
