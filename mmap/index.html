@@ -66,12 +66,17 @@
 				    console.log(myLat);
     				console.log(myLng);
 
+            image = {
+                url: "courage.png"
+                size: new google.maps.Size:(30,48),
+                origin: new google.maps.Point(0,0)
+            }
 
             marker = new google.maps.Marker({
               position: myLoc,
               map: map,
               animation: google.maps.Animation.DROP,
-              icon: "courage.png",
+              icon: image,
               title: "Here I am!"
             });
 
@@ -99,7 +104,9 @@
                   if (request.readyState == 4 && request.status == 200) {
                       converted=JSON.parse(request.responseText);
                        for(i = 0; i < converted.length; i++){
-                           createMarker(converted[i]);
+                          setTimeout(function() {
+                            createMarker(converted[i]);
+                            }, i*200);
                        }
                   }
             };
