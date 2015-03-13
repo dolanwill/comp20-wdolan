@@ -36,35 +36,26 @@
     	};
 
     	function getMyLocation() {
-    			console.log("in getmyloc");
 
     			if (navigator.geolocation) { 
 
     					navigator.geolocation.getCurrentPosition(function(position) {
-    						console.log("in subfunction");
     						myLat = position.coords.latitude;
     						myLng = position.coords.longitude;
-    						console.log(myLat);
-    						console.log(myLng);
-                
+  
                 renderMap();
 
     					   });
 				  }
     			else{
-        				console.log("fuck this shit");
         				alert("Geolocation is not supported by your browser.");
     			}
     	}
 
 
     	function renderMap(){
-    		    console.log("in rendermap");
             
             myLoc = new google.maps.LatLng(myLat, myLng);
-
-				    console.log(myLat);
-    				console.log(myLng);
 
             image = {
                 url: "courage.png",
@@ -86,14 +77,12 @@
                    infowindow.open(map, marker);
             });
 
-        		console.log("leaving rendermap");
             getData();
 
     		}
 
 
       function getData(){
-            console.log("in xhr function");
 
             var url = "https://secret-about-box.herokuapp.com/sendLocation";
             request.open("POST", url, true);
@@ -141,7 +130,7 @@
             //end haversine, converted to miles
 
 
-            var contentString = name + " latitude: " + person['lat'] +" longitude: " + person['lng'] + " distance from me: " + d + " miles";
+            var contentString = name + ", latitude: " + person['lat'] +", longitude: " + person['lng'] + ", distance from me: " + d + " miles";
 
             google.maps.event.addListener(marker1, 'click', function() {
                     if (infowindow) {
