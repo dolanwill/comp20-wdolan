@@ -126,7 +126,7 @@
             });
 
             google.maps.event.addListener(marker1, 'click', function() {
-                   infowindow.setContent(marker1.title);
+                   infowindow.setContent(marker1.title, person['lat'], person['lng']);
                    infowindow.open(map, marker1);
             });
 
