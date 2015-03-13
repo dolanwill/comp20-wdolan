@@ -107,7 +107,7 @@
 
       }
 
-      /*function parse(){
+      function parse(){
               console.log("In my callback function " + request.readyState);
               if (request.readyState == 4 && request.status == 200) {
                   console.log("request status is tight bitch!");
@@ -116,7 +116,7 @@
                         console.log(converted[i]['login']);
                     }
               }
-      }*/
+      }
 
       google.maps.event.addDomListener(window, 'load', initialize);
       request.onreadystatechange = parse();
