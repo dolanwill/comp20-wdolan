@@ -71,6 +71,7 @@
               position: myLoc,
               map: map,
               animation: google.maps.Animation.DROP,
+              icon: courage.png,
               title: "Here I am!"
             });
 
@@ -95,9 +96,7 @@
             request.send("login=MarkHarris&lat="+myLat+"&lng="+myLng);
 
             request.onreadystatechange = function(){
-                  console.log("In my callback function " + request.readyState);
                   if (request.readyState == 4 && request.status == 200) {
-                      console.log("request status is tight bitch!");
                       converted=JSON.parse(request.responseText);
                        for(i = 0; i < converted.length; i++){
                            createMarker(converted[i]);
@@ -108,7 +107,7 @@
       }
 
       function createMarker(person){
-            console.log("person 1: " +person['login']);
+
             var personCoords = new google.maps.LatLng(person['lat'], person['lng']);
             var name = person['login'];
 
