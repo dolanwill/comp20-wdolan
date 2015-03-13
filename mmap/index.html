@@ -24,7 +24,7 @@
       var map;
       var marker;
       var infowindow = new google.maps.InfoWindow();
-      var places;
+      var request = new XMLHttpRequest();
 
 			function initialize() {
 				
@@ -88,7 +88,6 @@
 
       function getData(){
             console.log("in xhr function");
-            var request = new XMLHttpRequest();
             var url = "https://secret-about-box.herokuapp.com/sendLocation";
             request.open("POST", url, true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
