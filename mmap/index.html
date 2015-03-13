@@ -91,10 +91,8 @@
             var url = "https://secret-about-box.herokuapp.com/sendLocation";
             request.open("POST", url, true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            request.onreadystatechange = parse();
             request.send("login=MarkHarris&lat="+myLat+"&lng="+myLng);
             request.onreadystatechange = parse();
-
 
       }
 
@@ -110,6 +108,9 @@
       }
 
       google.maps.event.addDomListener(window, 'load', initialize);
+      request.onreadystatechange = parse();
+
+
     </script>
   </head>
 
