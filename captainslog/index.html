@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Captain's Log</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+			$("document").ready(function(){
+
+				for(key in localStorage){
+					$("#log").prepend("<p>"+ key+ " - "+ localStorage[key] + "</p>");
+				}
+
+				$("#msg").on('keypress', function(a){
+
+					if(a.which == 13){
+
+						var timeStamp = new Date();
+						var message = new $("#msg").val();
+
+						output = timeStamp+ " - "+ message;
+
+						$("#log").prepend("<p>"+ output + "</p>");
+
+						localStorage.setItem(timeStamp, message);
+					}
+				});
+			});
+	  		
+	</script>
+</head>
+
+<body>
+	<h1>Captain's Log</h1>
+	<h3>New entry: <input type="text" id="msg" name="msg" size="30" /></h3>
+	<div id="log"></div>
+</body>
+</html>
