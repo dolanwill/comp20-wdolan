@@ -1,1 +1,10 @@
-# comp20-wdolan
+This is the ReadMe for Will Dolan's private Github Repository, which currently contains a selection of Web Programming applications or assignments. 
+
+This class was incredibly developmental for my career, and particularly in terms of my computer science and how it will fit in.
+It might be a bit of a cliche at this point, but the general idea of "teaching yourself," and I guess more specifically put, learning (on your own) the tools to build, test and perfect applications was tremendously useful.  There was still a good amount of hand-holding in the class, admittedly, but compared to classes like Intro to CS and Data Structures, the freedom to go about a project however you want to, and either see it crash and burn or teach yourself how to make it work added a great amount of responsibility and maturity to all the projects.
+
+Because of this, the semester group project was my favorite assignment. The freedom to do whatever we wanted made our entire group very invested in seeing everything through and gave us a much more pronounced sense of ownership. We were also free to pursue whatever interested us most, which made the project overall more enjoyable. I'd also add that creating the interface for project 2 was also a lot of fun.
+
+The most important things I learned were incorporating APIs or frameworks into my work (i.e. - how not to reinvent the wheel). I feel that comp 11 and 15 are really all about reinventing the wheel, so you can understand how wheels work, so to speak, but it was great being able to build cooler or more powerful projects with frameworks. Examples of this in action were the node.js/mongo JavaScript tools, and using things like the Google Maps or Yelp API.
+
+I definitely see myself taking more interface and application development classes in the near future, and hopefully applying what I learn to some different projects in and around Tufts! I also plan on learning about other database programs, like Parse for example.
